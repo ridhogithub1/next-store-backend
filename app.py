@@ -12,9 +12,9 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for React frontend
 
 # MongoDB Configuration
-MONGODB_URI = "mongodb+srv://rr6093225_db_user:SlhRyLgrH5VzNMvs@cluster0.ihxeqhh.mongodb.net/?appName=Cluster0"
-DATABASE_NAME = "dropship_db"
-COLLECTION_NAME = "orders"
+MONGODB_URI = os.getenv("MONGODB_URI")
+DATABASE_NAME = os.getenv("DATABASE_NAME", "dropship_db")
+COLLECTION_NAME = os.getenv("COLLECTION_NAME", "orders")
 
 # Initialize MongoDB client
 try:
