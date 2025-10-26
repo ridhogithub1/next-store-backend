@@ -3,12 +3,16 @@ from flask_cors import CORS
 from pymongo import MongoClient
 from datetime import datetime
 import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for React frontend
 
 # MongoDB Configuration
-MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb+srv://rr6093225_db_user:SlhRyLgrH5VzNMvs@cluster0.ihxeqhh.mongodb.net/?appName=Cluster0')
+MONGODB_URI = "mongodb+srv://rr6093225_db_user:SlhRyLgrH5VzNMvs@cluster0.ihxeqhh.mongodb.net/?appName=Cluster0"
 DATABASE_NAME = "dropship_db"
 COLLECTION_NAME = "orders"
 
