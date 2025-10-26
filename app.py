@@ -8,8 +8,7 @@ app = Flask(__name__)
 CORS(app)  # Enable CORS for React frontend
 
 # MongoDB Configuration
-# Vercel will use environment variable, local will use hardcoded
-MONGODB_URI = os.getenv('MONGODB_URI') or "mongodb+srv://rr6093225_db_user:SlhRyLgrH5VzNMvs@cluster0.ihxeqhh.mongodb.net/?appName=Cluster0"
+MONGODB_URI = os.getenv('MONGODB_URI', 'mongodb+srv://rr6093225_db_user:SlhRyLgrH5VzNMvs@cluster0.ihxeqhh.mongodb.net/?appName=Cluster0')
 DATABASE_NAME = "dropship_db"
 COLLECTION_NAME = "orders"
 
